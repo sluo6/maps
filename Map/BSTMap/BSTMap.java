@@ -54,6 +54,12 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V>{
 	public V remove(K key, V value) {
 		throw new UnsupportedOperationException("remove is not supported!");
 	}
+	
+	
+	/** Print out map in order of increasing Key. */
+	public void printInOrder(BSTMap<K, V> T) {
+		
+	}
 
 	
 
