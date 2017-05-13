@@ -3,12 +3,11 @@ package BSTMap;
 import java.util.Iterator;
 import java.util.Set;
 
-public class BSTMap implements Map61B{
+public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V>{
 
 	@Override
-	public Iterator iterator() {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterator<K> iterator() {
+		throw new UnsupportedOperationException("iterator is not supported!");
 	}
 
 	@Override
@@ -18,13 +17,13 @@ public class BSTMap implements Map61B{
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public boolean containsKey(K key) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Object get(Object key) {
+	public V get(K key) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -36,27 +35,26 @@ public class BSTMap implements Map61B{
 	}
 
 	@Override
-	public void put(Object key, Object value) {
+	public void put(K key, V value) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Set keySet() {
-		// TODO Auto-generated method stub
-		return null;
+	public Set<K> keySet() {
+		throw new UnsupportedOperationException("keySet is not supported!");
 	}
 
 	@Override
-	public Object remove(Object key) {
-		// TODO Auto-generated method stub
-		return null;
+	public V remove(K key) {
+		throw new UnsupportedOperationException("remove is not supported!");
 	}
 
 	@Override
-	public Object remove(Object key, Object value) {
-		// TODO Auto-generated method stub
-		return null;
+	public V remove(K key, V value) {
+		throw new UnsupportedOperationException("remove is not supported!");
 	}
+
+	
 
 }
