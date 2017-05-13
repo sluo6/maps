@@ -40,14 +40,27 @@ public BSTMap() {
 
 	@Override
 	public boolean containsKey(K key) {
-		// TODO Auto-generated method stub
-		return false;
+		if (key == null) throw new IllegalArgumentException("argument to contains() is null");
+		return get(key) != null;
 	}
 
 	@Override
+	/** Search the BSTMap for the value that associates with a key. */
 	public V get(K key) {
-		// TODO Auto-generated method stub
-		return null;
+		return get(root, key);
+	}
+	
+	private V get(Node x, K key) {
+		if (key == null) throw new IllegalArgumentException("called get() with a null key");
+		if (x == null) 
+			return null;
+		int cmp = key.compareTo(x.key);
+		if (cmp < 0) 
+			return get(x.left, key);
+		else if (cmp > 0) 
+			return get(x.right, key);
+		else 
+			return x.val;
 	}
 
 	@Override
