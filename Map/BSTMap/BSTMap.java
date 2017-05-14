@@ -34,8 +34,7 @@ public BSTMap() {
 	@Override
 	/** Removes all of the mappings from this map. */
 	public void clear() {
-		// TODO Auto-generated method stub
-		
+		this.root = null;	
 	}
 
 	@Override
@@ -76,10 +75,25 @@ public BSTMap() {
 
 	@Override
 	public void put(K key, V value) {
-		// TODO Auto-generated method stub
-		
+		if (key == null) throw new IllegalArgumentException("called put() with a null key");
+		if (value == null) {
+			remove(key);
+			return;
+		}
+		root = put(root, key, value);		
 	}
 
+	private Node put(Node x, K key, V value) {
+		if (x == null)
+			return new Node(key, value, 1);
+		int cmp = key.compareTo(x.key);
+		if (cmp < 0) x.left = put(x.left, key, value);
+		else if (cmp > 0) x.right = put(x.right, key, value);
+		else x.val = value;     //overwriting the old value with the new value
+		x.size = 1 + size(x.left) + size(x.right);
+		return x;
+	}
+	
 	@Override
 	public Set<K> keySet() {
 		throw new UnsupportedOperationException("keySet is not supported!");
