@@ -63,6 +63,7 @@ public BSTMap() {
 	}
 
 	@Override
+	/** Return number of key-value pairs. */
 	public int size() {
 		return size(root);
 	}
@@ -74,6 +75,7 @@ public BSTMap() {
 	}
 
 	@Override
+	/** Insert a key-value pair in BSTMap. */
 	public void put(K key, V value) {
 		if (key == null) throw new IllegalArgumentException("called put() with a null key");
 		if (value == null) {
@@ -100,8 +102,9 @@ public BSTMap() {
 	}
 
 	@Override
+	/** Remove the specified key and its associated value. */
 	public V remove(K key) {
-		throw new UnsupportedOperationException("remove is not supported!");
+	    
 	}
 
 	@Override
