@@ -59,8 +59,7 @@ public class MyHashMap implements Map61B {
 
 	@Override
 	public Object remove(Object key, Object value) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException("This remove operation is not supported.")
 	}
 	
 	
